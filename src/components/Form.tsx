@@ -114,8 +114,10 @@ function Form() {
         type="submit"
         disabled={isLoading}
         className={`w-full ${
-          isLoading ? "bg-[#063970] bg-opacity-50 bg-[#064470]" : "bg-[#063970]"
-        }  tracking-wide transition-all hover:bg-[#064470] mt-5 p-2 rounded uppercase leading-2px text-white font-bold`}
+          isLoading
+            ? "bg-[#063970] bg-opacity-70"
+            : "bg-[#063970] hover:bg-[#064470]"
+        }  tracking-wide transition-all mt-5 p-2 rounded uppercase leading-2px text-white font-bold`}
       >
         {isLoading ? "Submitting..." : "Submit"}
       </button>
