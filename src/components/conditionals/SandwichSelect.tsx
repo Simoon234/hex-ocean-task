@@ -19,6 +19,11 @@ function SandwichSelect({
           aria-invalid={
             errorSlicesOfBread && touchedSlicesOfBread ? "true" : "false"
           }
+          className={`${
+            errorSlicesOfBread && touchedSlicesOfBread
+              ? "border-2 border-red-500"
+              : ""
+          }`}
           aria-label="slices_of_bread"
           type="number"
           aria-errormessage="slices_of_bread-id"

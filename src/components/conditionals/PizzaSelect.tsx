@@ -21,9 +21,17 @@ function PizzaSelect({
           value={no_of_slices}
           onChange={handleChange}
           min={1}
+          className={`${
+            errorsNo_of_slices && touchedNo_of_slices
+              ? "border-2 border-red-500"
+              : ""
+          }`}
           name="no_of_slices"
           aria-label="number_of_slices"
           type="number"
+          aria-invalid={
+            errorsNo_of_slices && touchedNo_of_slices ? "true" : "false"
+          }
         />
       </label>
       {errorsNo_of_slices && touchedNo_of_slices ? (
@@ -39,11 +47,15 @@ function PizzaSelect({
           onBlur={handleBlur}
           value={diameter}
           onChange={handleChange}
+          className={`${
+            errorsDiameter && touchedDiameter ? "border-2 border-red-500" : ""
+          }`}
           name="diameter"
           aria-label="diameter"
           min={1}
           step="0.1"
           type="number"
+          aria-invalid={errorsDiameter && touchedDiameter ? "true" : "false"}
         />
       </label>
       {errorsDiameter && touchedDiameter ? (

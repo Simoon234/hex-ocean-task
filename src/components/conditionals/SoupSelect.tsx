@@ -16,8 +16,12 @@ function SoupSelect({
           value={spiciness_scale}
           onChange={handleChange}
           aria-label="spiciness_scale"
+          aria-invalid={errorSoup && touchedSoup ? "true" : "false"}
           min={1}
           max={10}
+          className={`${
+            errorSoup && touchedSoup ? "border-2 border-red-500" : ""
+          }`}
           onBlur={handleBlur}
           type="number"
         />
