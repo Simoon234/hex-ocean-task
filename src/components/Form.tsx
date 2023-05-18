@@ -5,6 +5,7 @@ import initialFormikValues from "../lib/initialFormikValues";
 import DishType from "../types/enums";
 import validationSchema from "../lib/validationSchema";
 import usePostData from "../hooks/usePost";
+import UseSelectDisplay from "../hooks/useSelectDisplay";
 
 function Form() {
   const { handlePost, setErrors } = usePostData();
@@ -35,6 +36,16 @@ function Form() {
     setErrors([]);
     resetForm();
   }
+
+  const { handleSelectedOption } = UseSelectDisplay({
+    errors,
+    handleBlur,
+    handleChange,
+    touched,
+    type: values.type,
+    values,
+  });
+
   return (
     <form
       className="flex flex-col max-w-2xl w-[80%] m-auto justify-center items-center h-full"
@@ -110,6 +121,7 @@ function Form() {
           {errors.type}
         </span>
       ) : null}
+      {handleSelectedOption()}
       <button
         type="submit"
         disabled={isLoading}
