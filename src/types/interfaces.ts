@@ -1,4 +1,5 @@
 import React, { ChangeEvent, FocusEventHandler } from "react";
+import { FormikErrors, FormikTouched } from "formik";
 import DishType from "./enums";
 
 export interface DishesFields {
@@ -46,6 +47,15 @@ export interface SoupSelectProps {
   errorSoup: string;
   touchedSoup: boolean;
   handleBlur: FocusEventHandler<HTMLInputElement> | undefined;
+}
+
+export interface UserSelectDisplayProps {
+  type: string;
+  handleChange: (e: ChangeEvent) => void;
+  errors: FormikErrors<DishesFields>;
+  touched: FormikTouched<DishesFields>;
+  values: DishesFields;
+  handleBlur: React.FocusEventHandler<HTMLInputElement> | undefined;
 }
 
 export interface Submit {

@@ -1,19 +1,9 @@
-import React, { ChangeEvent } from "react";
-import { FormikErrors, FormikTouched } from "formik";
 import DishType from "../types/enums";
-import { DishesFields } from "../types";
+import { UserSelectDisplayProps } from "../types";
 import PizzaSelect from "../components/conditionals/PizzaSelect";
 import SoupSelect from "../components/conditionals/SoupSelect";
 import SandwichSelect from "../components/conditionals/SandwichSelect";
 
-export interface Props {
-  type: string;
-  handleChange: (e: ChangeEvent) => void;
-  errors: FormikErrors<DishesFields>;
-  touched: FormikTouched<DishesFields>;
-  values: DishesFields;
-  handleBlur: React.FocusEventHandler<HTMLInputElement> | undefined;
-}
 const UseSelectDisplay = ({
   handleChange,
   handleBlur,
@@ -21,7 +11,7 @@ const UseSelectDisplay = ({
   touched,
   errors,
   values,
-}: Props) => {
+}: UserSelectDisplayProps) => {
   function handleSelectedOption() {
     switch (type) {
       case DishType.pizza: {
