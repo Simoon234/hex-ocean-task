@@ -1,5 +1,5 @@
 function App() {
-  return <p>HexOcean</p>;
+  return <div className="h-screen">HexOcean</div>;
 }
 
 export default App;
