@@ -1,4 +1,4 @@
-import React, { ChangeEvent } from "react";
+import React, { ChangeEvent, FocusEventHandler } from "react";
 import DishType from "./enums";
 
 export interface DishesFields {
@@ -38,4 +38,12 @@ export interface SandwichSelectProps {
   errorSlicesOfBread: string;
   touchedSlicesOfBread: boolean;
   handleBlur: React.FocusEventHandler<HTMLInputElement> | undefined;
+}
+
+export interface SoupSelectProps {
+  spiciness_scale: number;
+  handleChange: (e: ChangeEvent) => void;
+  errorSoup: string;
+  touchedSoup: boolean;
+  handleBlur: FocusEventHandler<HTMLInputElement> | undefined;
 }
