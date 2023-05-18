@@ -6,10 +6,11 @@ import DishType from "../types/enums";
 import validationSchema from "../lib/validationSchema";
 import usePostData from "../hooks/usePost";
 import UseSelectDisplay from "../hooks/useSelectDisplay";
+import submitHelper from "../lib/submitHandler";
 
 function Form() {
   const { handlePost, setErrors } = usePostData();
-  const { isLoading } = useMutation({
+  const { isLoading, mutate } = useMutation({
     mutationFn: handlePost,
   });
   const {
@@ -22,11 +23,15 @@ function Form() {
     resetForm,
   } = useFormik({
     onSubmit: async (val) => {
-      console.log(val);
+      submitHelper({
+        mutate,
+        val,
+      });
     },
     validationSchema,
     initialValues: initialFormikValues,
   });
+
   function resetFields() {
     toast.warning("All fields has been reset", {
       pauseOnHover: false,
