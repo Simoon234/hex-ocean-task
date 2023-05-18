@@ -1,5 +1,4 @@
-import DishType from "../types/enums";
-import { UserSelectDisplayProps } from "../types";
+import { DishType, UserSelectDisplayProps } from "../types";
 import PizzaSelect from "../components/conditionals/PizzaSelect";
 import SoupSelect from "../components/conditionals/SoupSelect";
 import SandwichSelect from "../components/conditionals/SandwichSelect";

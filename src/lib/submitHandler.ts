@@ -1,5 +1,4 @@
-import { Submit } from "../types";
-import DishType from "../types/enums";
+import { DishType, Submit } from "../types";
 
 const submitHelper = ({ mutate, val }: Submit) => {
   const requiredValues = {
