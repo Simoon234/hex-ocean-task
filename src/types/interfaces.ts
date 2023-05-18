@@ -1,6 +1,6 @@
 import React, { ChangeEvent, FocusEventHandler } from "react";
 import { FormikErrors, FormikTouched } from "formik";
-import DishType from "./enums";
+import { ButtonType, DishType } from "./enums";
 
 export interface DishesFields {
   name: string;
@@ -65,4 +65,11 @@ export interface Submit {
 
 export interface ErrorResponse {
   customError: ErrorRes[] | null;
+}
+
+export interface ButtonProps {
+  type: ButtonType;
+  isLoading: boolean;
+  setErrors: (x: ErrorRes[] | null) => void;
+  resetForm?: () => void;
 }
