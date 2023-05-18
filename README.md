@@ -56,7 +56,6 @@ Maybe you can mention me or this repo in the acknowledgements too
 <!-- TechStack -->
 ### :space_invader: Tech Stack
 
-<details>
   <summary>Client</summary>
   <ul>
     <li><a href="https://www.typescriptlang.org/">Typescript</a></li>
@@ -66,7 +65,6 @@ Maybe you can mention me or this repo in the acknowledgements too
     <li><a href="https://formik.org/">Formik</a></li>
     <li><a href="https://axios-http.com/">Axios</a></li>
   </ul>
-</details>
 
 
 <!-- Color Reference -->
