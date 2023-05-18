@@ -1,3 +1,4 @@
+import { useCallback } from "react";
 import { DishType, UserSelectDisplayProps } from "../types";
 import PizzaSelect from "../components/conditionals/PizzaSelect";
 import SoupSelect from "../components/conditionals/SoupSelect";
@@ -11,7 +12,7 @@ const UseSelectDisplay = ({
   errors,
   values,
 }: UserSelectDisplayProps) => {
-  function handleSelectedOption() {
+  const handleSelectedOption = useCallback(() => {
     switch (type) {
       case DishType.pizza: {
         return (
@@ -53,7 +54,23 @@ const UseSelectDisplay = ({
         return "";
       }
     }
-  }
+  }, [
+    errors.diameter,
+    errors.no_of_slices,
+    errors.slices_of_bread,
+    errors.spiciness_scale,
+    handleBlur,
+    handleChange,
+    touched.diameter,
+    touched.no_of_slices,
+    touched.slices_of_bread,
+    touched.spiciness_scale,
+    type,
+    values.diameter,
+    values.no_of_slices,
+    values.slices_of_bread,
+    values.spiciness_scale,
+  ]);
   return {
     handleSelectedOption,
   };
