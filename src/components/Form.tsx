@@ -5,7 +5,7 @@ import initialFormikValues from "../lib/initialFormikValues";
 import validationSchema from "../lib/validationSchema";
 import usePostData from "../hooks/usePost";
 import UseSelectDisplay from "../hooks/useSelectDisplay";
-import submitHelper from "../lib/submitHandler";
+import submitHandler from "../lib/submitHandler";
 import ErrorsResponse from "./errors/ErrorResponse";
 import { ButtonType, DishType } from "../types";
 import Button from "./common/Button";
@@ -26,7 +26,7 @@ function Form() {
     resetForm,
   } = useFormik({
     onSubmit: async (val) => {
-      submitHelper({
+      submitHandler({
         mutate,
         val,
       });
