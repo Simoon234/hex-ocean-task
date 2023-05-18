@@ -31,3 +31,11 @@ export interface PizzaSelectProps {
   touchedDiameter: boolean;
   handleBlur: React.FocusEventHandler<HTMLInputElement> | undefined;
 }
+
+export interface SandwichSelectProps {
+  handleChange: (e: ChangeEvent) => void;
+  slices_of_bread: number;
+  errorSlicesOfBread: string;
+  touchedSlicesOfBread: boolean;
+  handleBlur: React.FocusEventHandler<HTMLInputElement> | undefined;
+}
