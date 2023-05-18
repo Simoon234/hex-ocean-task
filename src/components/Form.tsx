@@ -1,14 +1,14 @@
 import { useFormik } from "formik";
 import { useMutation } from "react-query";
-import { toast } from "react-toastify";
 import { useEffect } from "react";
 import initialFormikValues from "../lib/initialFormikValues";
-import DishType from "../types/enums";
 import validationSchema from "../lib/validationSchema";
 import usePostData from "../hooks/usePost";
 import UseSelectDisplay from "../hooks/useSelectDisplay";
 import submitHelper from "../lib/submitHandler";
 import ErrorsResponse from "./errors/ErrorResponse";
+import { ButtonType, DishType } from "../types";
+import Button from "./common/Button";
 
 function Form() {
   const { handlePost, setErrors, customError, setSuccess, success } =
@@ -34,16 +34,6 @@ function Form() {
     validationSchema,
     initialValues: initialFormikValues,
   });
-
-  function resetFields() {
-    toast.warning("All fields has been reset", {
-      pauseOnHover: false,
-      toastId: "reset",
-      draggable: false,
-    });
-    setErrors([]);
-    resetForm();
-  }
 
   const { handleSelectedOption } = UseSelectDisplay({
     errors,
@@ -74,7 +64,9 @@ function Form() {
           onBlur={handleBlur}
           value={values.name}
           onChange={handleChange}
-          className="w-full bg-backgroundFormColor mb-2 p-2 rounded drop-shadow-md outline-none"
+          className={`${
+            errors.name && touched.name ? "border-2 border-red-500" : ""
+          }`}
           type="text"
           aria-invalid={errors.name && touched.name ? "true" : "false"}
           aria-errormessage="name-id"
@@ -93,6 +85,11 @@ function Form() {
           name="preparation_time"
           aria-label="input-preparation_time"
           onChange={handleChange}
+          className={`${
+            errors.preparation_time && touched.preparation_time
+              ? "border-2 border-red-500"
+              : ""
+          }`}
           onBlur={handleBlur}
           aria-invalid={
             errors.preparation_time && touched.preparation_time
@@ -116,6 +113,9 @@ function Form() {
         <select
           onBlur={handleBlur}
           value={values.type}
+          className={`${
+            errors.type && touched.type ? "border-2 border-red-500" : ""
+          }`}
           onChange={handleChange}
           aria-invalid={errors.type && touched.type ? "true" : "false"}
           aria-errormessage="type-id"
@@ -133,31 +133,20 @@ function Form() {
         </span>
       ) : null}
       {handleSelectedOption()}
-      <button
-        type="submit"
-        disabled={isLoading}
-        className={`w-full ${
-          isLoading
-            ? "bg-[#063970] bg-opacity-70"
-            : "bg-[#063970] hover:bg-[#064470]"
-        }  tracking-wide transition-all mt-5 p-2 rounded uppercase leading-2px text-white font-bold`}
-      >
-        {isLoading ? "Submitting..." : "Submit"}
-      </button>
+      <Button
+        type={ButtonType.submit}
+        isLoading={isLoading}
+        setErrors={setErrors}
+      />
       {values.name !== "" &&
         values.type !== "" &&
         values.preparation_time !== "" && (
-          <button
-            type="button"
-            onClick={resetFields}
-            aria-label="reset-btn"
-            disabled={isLoading}
-            className={`w-full ${
-              isLoading ? "bg-red-200 bg-opacity-70 bg-[#064470]" : "bg-red-800"
-            }  tracking-wide transition-all mt-5 p-2 rounded uppercase leading-2px text-white font-bold`}
-          >
-            Reset
-          </button>
+          <Button
+            type={ButtonType.button}
+            isLoading={isLoading}
+            resetForm={resetForm}
+            setErrors={setErrors}
+          />
         )}
       <ErrorsResponse customError={customError} />
     </form>
