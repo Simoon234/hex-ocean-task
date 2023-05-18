@@ -52,3 +52,7 @@ export interface Submit {
   val: DishesFields;
   mutate: any;
 }
+
+export interface ErrorResponse {
+  customError: ErrorRes[] | null;
+}
