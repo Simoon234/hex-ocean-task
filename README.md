@@ -17,7 +17,7 @@ Maybe you can mention me or this repo in the acknowledgements too
 
 - [About the Project](#star2-about-the-project)
   * [Screenshots](#camera-screenshots)
-  * [Movie](#camera-screenshots)
+  * [Movie](#camera-movie)
   * [Tech Stack](#space_invader-tech-stack)
   * [Color Reference](#art-color-reference)
   * [Environment Variables](#key-environment-variables)
@@ -170,6 +170,11 @@ To run tests, run the following command
 
   + npm -v  `8.19.3`
 
+
+<!-- Live -->
+## 🗺️ Live
+
+https://hex-ocean-task-9u7bhp5h0-simoon234.vercel.app/
 
 
 <!-- Contact -->
