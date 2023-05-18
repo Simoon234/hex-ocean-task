@@ -57,9 +57,7 @@ function Form() {
       onSubmit={handleSubmit}
     >
       <label className="w-full" htmlFor="name">
-        <p className="mb-2">
-          Name <span>*</span>
-        </p>
+        <p className="mb-2">Name</p>
         <input
           name="name"
           aria-label="input-name"
@@ -104,9 +102,7 @@ function Form() {
         </span>
       ) : null}
       <label className="w-full" htmlFor="type">
-        <p className="mb-2">
-          Type <span>*</span>
-        </p>
+        <p className="mb-2">Type</p>
         <select
           onBlur={handleBlur}
           value={values.type}
