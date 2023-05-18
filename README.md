@@ -82,7 +82,7 @@ Maybe you can mention me or this repo in the acknowledgements too
 
 To run this project, you will need to add the following environment variables to your .env file
 
-`VITE_API_URL`
+`VITE_API_URL` - here will be your API_URL
 
 <!-- Getting Started -->
 ## 	:toolbox: Getting Started
