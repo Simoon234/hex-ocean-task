@@ -1,15 +1,18 @@
 import { useFormik } from "formik";
 import { useMutation } from "react-query";
 import { toast } from "react-toastify";
+import { useEffect } from "react";
 import initialFormikValues from "../lib/initialFormikValues";
 import DishType from "../types/enums";
 import validationSchema from "../lib/validationSchema";
 import usePostData from "../hooks/usePost";
 import UseSelectDisplay from "../hooks/useSelectDisplay";
 import submitHelper from "../lib/submitHandler";
+import ErrorsResponse from "./errors/ErrorResponse";
 
 function Form() {
-  const { handlePost, setErrors } = usePostData();
+  const { handlePost, setErrors, customError, setSuccess, success } =
+    usePostData();
   const { isLoading, mutate } = useMutation({
     mutationFn: handlePost,
   });
@@ -50,6 +53,13 @@ function Form() {
     type: values.type,
     values,
   });
+
+  useEffect(() => {
+    if (success) {
+      resetForm();
+      setSuccess(false);
+    }
+  }, [success, resetForm, setSuccess]);
 
   return (
     <form
@@ -149,6 +159,7 @@ function Form() {
             {isLoading ? "Submitting..." : "Reset"}
           </button>
         )}
+      <ErrorsResponse customError={customError} />
     </form>
   );
 }
