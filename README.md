@@ -28,6 +28,7 @@ Maybe you can mention me or this repo in the acknowledgements too
   * [Running Coverages](#test_tube-coverages-tests)
   * [Run Locally](#running-run-locally)
 - [FAQ](#grey_question-faq)
+- [Demo](#globe_with_meridians-demo)
 - [Contact](#handshake-contact)
 
   
@@ -171,14 +172,16 @@ To run tests, run the following command
   + npm -v  `8.19.3`
 
 
-<!-- Live -->
-## 🗺️ Live
+<!-- Demo -->
+### :globe_with_meridians: Demo
 
-https://hex-ocean-task-9u7bhp5h0-simoon234.vercel.app/
+This is a demo version
+
+`Link:` https://hex-ocean-task-9u7bhp5h0-simoon234.vercel.app/
 
 
 <!-- Contact -->
-## :handshake: Contact
-Szymon
+## :handshake: Contact 
+`email` simon98181@gmail.com
 
 
