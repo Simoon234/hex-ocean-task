@@ -47,3 +47,8 @@ export interface SoupSelectProps {
   touchedSoup: boolean;
   handleBlur: FocusEventHandler<HTMLInputElement> | undefined;
 }
+
+export interface Submit {
+  val: DishesFields;
+  mutate: any;
+}
