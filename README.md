@@ -157,10 +157,10 @@ To run tests, run the following command
 <!-- FAQ -->
 ## :grey_question: FAQ
 
-- How long it took me to finish this project?
+- How long it tooks me to finish this project?
 
   + To be honest, it tooks me some time to do this task. My goal was to create well performed application. I have spent the most of my time on testing each componenets. 
-  + I wanted to be sure, that everything works as expected. If I have to tell you, how many hours I have spent on this app, I would say around 4 hours. 
+I wanted to be sure, that everything works as expected. If I have to tell you, how many hours I have spent on this app, I would say around 4 hours. 
 
 - What version of `node` do you use?
 
