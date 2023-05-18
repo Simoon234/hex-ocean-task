@@ -1,3 +1,4 @@
+import React, { ChangeEvent } from "react";
 import DishType from "./enums";
 
 export interface DishesFields {
@@ -18,4 +19,15 @@ export interface ErrorRes {
   no_of_slices: string[] | null;
   diameter: string[] | null;
   spiciness_scale: string[] | null;
+}
+
+export interface PizzaSelectProps {
+  no_of_slices: number;
+  diameter: number;
+  handleChange: (e: ChangeEvent) => void;
+  errorsNo_of_slices: string;
+  errorsDiameter: string;
+  touchedNo_of_slices: boolean;
+  touchedDiameter: boolean;
+  handleBlur: React.FocusEventHandler<HTMLInputElement> | undefined;
 }
