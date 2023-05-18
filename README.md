@@ -177,7 +177,7 @@ To run tests, run the following command
 
 This is a demo version
 
-`Link:` https://hex-ocean-task-9u7bhp5h0-simoon234.vercel.app/
+`Link:` https://hex-ocean-task-ihms.vercel.app/
 
 
 <!-- Contact -->
