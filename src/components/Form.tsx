@@ -53,6 +53,7 @@ function Form() {
 
   return (
     <form
+      autoComplete="off"
       className="flex flex-col max-w-2xl w-[80%] m-auto justify-center items-center h-full"
       onSubmit={handleSubmit}
     >
