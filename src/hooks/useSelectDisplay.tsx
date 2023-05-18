@@ -22,7 +22,7 @@ const UseSelectDisplay = ({
   errors,
   values,
 }: Props) => {
-  function handle() {
+  function handleSelectedOption() {
     switch (type) {
       case DishType.pizza: {
         return (
@@ -66,7 +66,7 @@ const UseSelectDisplay = ({
     }
   }
   return {
-    handle,
+    handleSelectedOption,
   };
 };
 
