@@ -153,10 +153,10 @@ function Form() {
             aria-label="reset-btn"
             disabled={isLoading}
             className={`w-full ${
-              isLoading ? "bg-red-200 bg-opacity-50 bg-[#064470]" : "bg-red-800"
+              isLoading ? "bg-red-200 bg-opacity-70 bg-[#064470]" : "bg-red-800"
             }  tracking-wide transition-all mt-5 p-2 rounded uppercase leading-2px text-white font-bold`}
           >
-            {isLoading ? "Submitting..." : "Reset"}
+            Reset
           </button>
         )}
       <ErrorsResponse customError={customError} />
